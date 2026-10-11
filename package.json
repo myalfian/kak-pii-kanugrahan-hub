@@ -1,0 +1,19 @@
+{
+  "name": "kak-pii-kanugrahan-hub",
+  "version": "1.0.0",
+  "description": "Gerakan Balik Desa Bikin Karya bersama Supi'i Slamet - Personal Branding & Social Impact Web App",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 8090 .",
+    "start": "npx serve -l 8090 ."
+  },
+  "keywords": [
+    "kanugrahan",
+    "supii-slamet",
+    "smart-agri",
+    "youth-movement",
+    "gen-z"
+  ],
+  "author": "Komunitas Kanugrahan Level Up",
+  "license": "MIT"
+}

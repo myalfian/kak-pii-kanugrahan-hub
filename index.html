@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supi'i Slamet 🌿 | Balik Desa, Bikin Karya — Kanugrahan Level Up</title>
+  <meta name="description" content="Gerakan pemuda, inovasi smart-farming, dan inkubasi UMKM Desa Kanugrahan bersama Supi'i Slamet (Kak Pi'i). Sawah mengalir, usaha bergulir, Kanugrahan mahir.">
+  
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine: '#0F2A1D',
+            emerald: {
+              750: '#235840',
+              850: '#153A28',
+              950: '#0A1E14',
+            },
+            mint: '#52B788',
+            sprout: '#74C69D',
+            gold: '#E9C46A',
+            sand: '#F4F1DE',
+            cream: '#FAF9F6'
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Style System -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F7F8F5] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 pb-20 md:pb-0">
+
+  <!-- ========================================================
+       1. DYNAMIC FLOATING GLASSMORPHISM NAVBAR
+       ======================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between glass-nav rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 shadow-sm border border-emerald-900/10">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center space-x-2.5 group">
+        <div class="w-9 h-9 rounded-full bg-emerald-900 text-mint flex items-center justify-center font-heading font-black text-base shadow-inner group-hover:scale-105 transition-transform">
+          🌱
+        </div>
+        <div>
+          <span class="font-heading font-bold text-sm sm:text-base text-emerald-950 tracking-tight flex items-center gap-1.5">
+            Supi'i Slamet
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-mint pulse-indicator"></span>
+          </span>
+          <span class="text-[11px] block font-medium text-emerald-700/80 -mt-0.5 tracking-wide">Kanugrahan Hub</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-xs font-semibold text-stone-600" aria-label="Navigasi Utama">
+        <a href="#cerita" class="nav-link px-3 py-1.5 rounded-full hover:text-emerald-800 hover:bg-emerald-50/80 transition-colors">Manifesto</a>
+        <a href="#inisiatif" class="nav-link px-3 py-1.5 rounded-full hover:text-emerald-800 hover:bg-emerald-50/80 transition-colors">6 Aksi Nyata</a>
+        <a href="#simulator" class="nav-link px-3 py-1.5 rounded-full hover:text-emerald-800 hover:bg-emerald-50/80 transition-colors">Simulasi Smart-Tani</a>
+        <a href="#aspirasi" class="nav-link px-3 py-1.5 rounded-full hover:text-emerald-800 hover:bg-emerald-50/80 transition-colors">Ruang Aspirasi</a>
+        <a href="#faq" class="nav-link px-3 py-1.5 rounded-full hover:text-emerald-800 hover:bg-emerald-50/80 transition-colors">Tanya Jawab</a>
+      </nav>
+
+      <!-- Right Action & Ambient Sound Toggle -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Ambient Sound Toggle -->
+        <button id="soundToggleBtn" class="flex items-center space-x-1.5 text-xs font-medium px-2.5 sm:px-3 py-1.5 rounded-full bg-white/80 hover:bg-white text-emerald-950 border border-emerald-900/15 touch-spring" title="Dengarkan Suara Aliran Sawah Kanugrahan">
+          <span class="flex items-end h-3 gap-[2px]">
+            <span class="sound-bar w-[2px] h-2 bg-emerald-600 rounded-full"></span>
+            <span class="sound-bar w-[2px] h-3 bg-emerald-600 rounded-full"></span>
+            <span class="sound-bar w-[2px] h-1.5 bg-emerald-600 rounded-full"></span>
+          </span>
+          <span id="soundStatus" class="hidden sm:inline text-[11px]">Suara Sawah</span>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#aspirasi" class="relative group inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-emerald-850 hover:bg-emerald-900 rounded-full shadow-sm hover:shadow-emerald-900/25 transition-all touch-spring overflow-hidden">
+          <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-mint/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          <span class="relative flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            <span>Kirim Ide</span>
+          </span>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl text-emerald-950 hover:bg-emerald-100/60 focus:outline-none" aria-label="Buka Menu Navigasi">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Dropdown -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden mt-2 max-w-7xl mx-auto glass-nav rounded-2xl p-4 shadow-lg border border-emerald-900/10">
+      <div class="flex items-center justify-between pb-3 border-b border-emerald-900/10 mb-2">
+        <span class="text-xs font-bold text-emerald-900 uppercase tracking-wider">Navigasi Cepat</span>
+        <button id="closeMobileMenu" class="text-stone-500 hover:text-stone-800 p-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-2 text-sm font-semibold text-stone-700">
+        <a href="#hero" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">Beranda</a>
+        <a href="#cerita" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">Manifesto: Balik Desa Bikin Karya</a>
+        <a href="#inisiatif" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">6 Inisiatif Aksi Nyata</a>
+        <a href="#simulator" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">Simulasi Potensi Smart-Tani</a>
+        <a href="#aspirasi" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">Kanugrahan-Hub: Curhat & Ide</a>
+        <a href="#faq" class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-emerald-50">Tanya Jawab Santun</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. HERO SECTION (Gen-Z Luxe Aesthetic & Bento Hero)
+       ======================================================== -->
+  <section id="hero" class="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-mesh-pattern">
+    
+    <!-- Background Ambient Glow Orbs -->
+    <div class="absolute -top-24 -left-20 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-24 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Top Status Badge -->
+      <div class="flex items-center justify-start mb-6">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-emerald-900/10 text-xs font-semibold text-emerald-900 shadow-sm badge-glow">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-indicator"></span>
+          <span>Active Movement</span>
+          <span class="text-stone-300">|</span>
+          <span class="text-emerald-700">Kembali Mengabdi untuk Kanugrahan</span>
+        </div>
+      </div>
+
+      <!-- Main Headline Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left: Punchy Typography & Action CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-emerald-950 tracking-tight leading-[1.12]">
+              Anak Muda Balik Desa, Saatnya <span class="text-gradient-pine">Kanugrahan Naik Kelas.</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-emerald-800/90 font-heading">
+              "Balik Desa, Bikin Karya: Saatnya Kanugrahan Level Up!"
+            </p>
+          </div>
+
+          <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+            Membawa pengalaman, menggandeng petani dan energi pemuda. Nggak cuma wacana, kita gaspol bareng-bareng lewat aksi nyata yang berkah, guyub, dan berdampak nyata bagi tanah kelahiran tercinta.
+          </p>
+
+          <!-- Hashtags Pill Bar -->
+          <div class="flex flex-wrap gap-2 text-xs font-semibold text-emerald-850">
+            <span class="px-3 py-1 rounded-full bg-emerald-100/80 border border-emerald-200">#PulangBikinImpact</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100/80 border border-emerald-200">#PetaniKerenKanugrahan</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100/80 border border-emerald-200">#KanugrahanLevelUp</span>
+          </div>
+
+          <!-- Dual Call to Action Buttons -->
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+            <a href="#inisiatif" class="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-emerald-850 hover:bg-emerald-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all touch-spring text-center">
+              <span>Eksplor 6 Aksi Nyata</span>
+              <svg class="w-4 h-4 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+
+            <a href="#aspirasi" class="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-white hover:bg-emerald-50 text-emerald-950 font-bold text-sm border border-emerald-900/15 shadow-sm transition-all touch-spring text-center">
+              <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              <span>Curhat / Usul Ide Warga</span>
+            </a>
+          </div>
+
+          <!-- Key Principles Mini Bar -->
+          <div class="pt-4 border-t border-emerald-900/10 flex items-center gap-6 text-xs text-stone-500 font-medium">
+            <div class="flex items-center gap-1.5">
+              <span class="text-emerald-700 font-bold">✓</span> Anti-Wacana Kosong
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-emerald-700 font-bold">✓</span> Transparan & Terbuka
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-emerald-700 font-bold">✓</span> Khidmat Kerakyatan
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Modern Bento Split Card with Supi'i Slamet -->
+        <div class="lg:col-span-5 relative">
+          
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Main Photo Card -->
+            <div class="glass-card rounded-3xl p-3 sm:p-4 border border-white/60 shadow-xl overflow-hidden relative group">
+              
+              <div class="relative h-[420px] sm:h-[480px] rounded-2xl overflow-hidden bg-stone-100">
+                <img 
+                  src="assets/supii-salam.jpg" 
+                  alt="Supi'i Slamet - Tokoh Muda & Inisiator Komunitas Desa Kanugrahan" 
+                  class="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] group-hover:scale-102 transition-transform duration-700"
+                />
+
+                <!-- Vignette and Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/20 to-transparent"></div>
+
+                <!-- Bottom Bio Badge on Photo -->
+                <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg text-emerald-950">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h2 class="font-heading font-extrabold text-base sm:text-lg text-emerald-950">Supi'i Slamet</h2>
+                      <p class="text-xs font-semibold text-emerald-700">Inisiator Komunitas & Agri-Innovator</p>
+                    </div>
+                    <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800 text-sm font-bold">
+                      🌿
+                    </div>
+                  </div>
+                  <div class="mt-2 pt-2 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-600 font-medium">
+                    <span>📍 Desa Kanugrahan</span>
+                    <span class="text-emerald-800 font-bold">"Sopan, Adem, Berdampak"</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Floating Badge 1: Guyub 100% -->
+            <div class="absolute -top-4 -left-4 sm:-left-6 glass-card px-3.5 py-2 rounded-2xl border border-white shadow-lg flex items-center gap-2">
+              <div class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                🤝
+              </div>
+              <div>
+                <p class="text-[10px] text-stone-500 font-bold uppercase leading-none">Semangat</p>
+                <p class="text-xs font-extrabold text-emerald-950 leading-tight">100% Guyub Rukun</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Irigasi Presisi -->
+            <div class="absolute top-1/3 -right-4 sm:-right-8 glass-card px-3.5 py-2.5 rounded-2xl border border-white shadow-lg flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-mint/20 text-emerald-900 flex items-center justify-center font-bold text-xs">
+                💧
+              </div>
+              <div>
+                <p class="text-[10px] text-stone-500 font-bold uppercase leading-none">Teknologi</p>
+                <p class="text-xs font-extrabold text-emerald-950 leading-tight">Irigasi Presisi</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 3: Digital Youth Hub -->
+            <div class="absolute -bottom-4 -left-3 sm:-left-4 glass-card px-4 py-2.5 rounded-2xl border border-white shadow-lg flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">
+                💡
+              </div>
+              <div>
+                <p class="text-[10px] text-stone-500 font-bold uppercase leading-none">Ruang Pemuda</p>
+                <p class="text-xs font-extrabold text-emerald-950 leading-tight">Creative & UMKM Lab</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. "WHY RETURN?" (MANIFESTO & STORYTELLING BENTO BOX)
+       ======================================================== -->
+  <section id="cerita" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <div class="mb-12 text-center max-w-3xl mx-auto space-y-3">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-850 text-xs font-bold uppercase tracking-wider">
+        <span>📖 Cerita & Niat Kami</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-emerald-950 tracking-tight">
+        Mengapa Pulang? Mengapa Kanugrahan?
+      </h2>
+      <p class="text-stone-600 text-base leading-relaxed">
+        Banyak orang berpikir kesuksesan ada di gedung-gedung tinggi perkotaan. Bagi kami, kehormatan tertinggi adalah ketika ilmu dan jejaring dibawa pulang untuk memakmurkan tanah kelahiran sendiri.
+      </p>
+    </div>
+
+    <!-- Bento Grid Manifesto -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Card 1: Core Islamic Ethical Pill (Khoirunnas Anfa'uhum Lin-Nas) -->
+      <div class="md:col-span-8 glass-card rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-emerald-950 to-emerald-900 text-white relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-mint/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="space-y-4 relative z-10">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 text-mint text-xs font-semibold backdrop-blur-sm border border-white/10">
+            <span>Prinsip Utama Pengabdian</span>
+          </div>
+
+          <blockquote class="text-xl sm:text-2xl font-heading font-bold text-sand leading-snug">
+            "Khoirunnas Anfa'uhum Lin-Nas — Sebaik-baik manusia adalah yang paling bermanfaat bagi sesamanya. Bermanfaat buat tanah kelahiran tanpa drama."
+          </blockquote>
+
+          <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed font-normal">
+            Bukan untuk mencari panggung atau gelar semu. Pulang ke Kanugrahan adalah panggilan nurani untuk menemani para bapak tani yang setiap fajar mencangkul, para ibu tangguh yang merawat ekonomi keluarga, dan anak-anak muda yang menyimpan segudang potensi namun kekurangan ruang berkreasi.
+          </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-emerald-800/80 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-emerald-200">
+          <span>🌿 Integritas Tanpa Syarat</span>
+          <span>🤝 Gotong Royong Lintas Generasi</span>
+          <span>✨ Berkah untuk Seluruh Warga</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Personal Quote Card -->
+      <div class="md:col-span-4 glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between border-emerald-900/10 bg-amber-50/50">
+        <div class="space-y-4">
+          <span class="text-3xl text-amber-600 font-serif font-black leading-none">“</span>
+          <p class="text-stone-800 text-base sm:text-lg font-heading font-bold leading-relaxed">
+            Sawah bukan masa lalu. Tanah Kanugrahan adalah masa depan kita bersama.
+          </p>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
+            Jika anak mudanya meninggalkan sawah, siapa yang akan menjaga kedaulatan pangan dan tanah leluhur kita? Saatnya bertani modern dengan otak, bukan sekadar otot.
+          </p>
+        </div>
+
+        <div class="pt-6 border-t border-amber-200/70 flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden bg-emerald-800">
+            <img src="assets/supii-salam.jpg" alt="Supi'i Slamet" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <p class="text-xs font-bold text-stone-900 font-heading">Kak Pi'i (Supi'i Slamet)</p>
+            <p class="text-[11px] text-stone-500">Kawan Petani Muda Kanugrahan</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Landscape Aerial Photo Banner -->
+      <div class="md:col-span-7 glass-card rounded-3xl overflow-hidden relative min-h-[260px] group">
+        <img 
+          src="assets/kanugrahan-sawah-drone.jpg" 
+          alt="Bentang Sawah Subur & Irigasi Desa Kanugrahan" 
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[260px]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/30 to-transparent flex flex-col justify-end p-6 text-white">
+          <span class="text-xs font-bold text-mint uppercase tracking-wider mb-1">Potensi Tak Terbatas</span>
+          <h3 class="text-lg sm:text-xl font-heading font-bold">"Sawah Mengalir, Usaha Bergulir, Kanugrahan Mahir."</h3>
+          <p class="text-xs text-stone-200 mt-1 max-w-lg">Irigasi yang adil mengalirkan air sampai ke hilir, membuka jalan bagi kemandirian pangan warga.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Youth Movement Powerhouse -->
+      <div class="md:col-span-5 glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-white border border-emerald-900/10">
+        <div>
+          <div class="flex items-center space-x-2 text-xs font-bold text-emerald-800 uppercase tracking-wider mb-2">
+            <span>⚡ Mindset Baru</span>
+          </div>
+          <h3 class="text-lg font-heading font-extrabold text-emerald-950 mb-2">
+            "Nggak Perlu ke Kota Buat Jadi Berdaya."
+          </h3>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Dengan internet di tangan, hasil bumi di ladang, dan solidaritas pemuda yang guyub, kita bisa ciptakan ekonomi bernilai miliaran rupiah langsung dari rumah sendiri di Desa Kanugrahan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-stone-100 text-center">
+          <div class="p-2.5 rounded-xl bg-emerald-50">
+            <span class="block text-lg font-black text-emerald-900 font-heading">500+</span>
+            <span class="text-[11px] text-stone-600 font-medium">Hektar Sawah Subur</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-amber-50">
+            <span class="block text-lg font-black text-amber-900 font-heading">1.200+</span>
+            <span class="text-[11px] text-stone-600 font-medium">Pemuda & Milenial Desa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       4. BENTO GRID SHOWCASE: 6 INISIATIF AKSI NYATA
+       ======================================================== -->
+  <section id="inisiatif" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-emerald-950 text-white relative overflow-hidden">
+    
+    <!-- Background Decor -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-mint/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-96 h-96 bg-emerald-800/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-900 text-mint text-xs font-bold uppercase tracking-wider border border-mint/20">
+          <span>🚀 Agenda Nyata Komunitas</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight text-white">
+          6 Inisiatif Aksi Nyata untuk Kanugrahan
+        </h2>
+        <p class="text-emerald-200 text-sm sm:text-base leading-relaxed">
+          Bukan sekadar deretan kata indah. Ini adalah peta jalan kolaboratif yang disusun bersama para petani muda, pelaku UMKM, dan pegiat Karang Taruna untuk aksi berkelanjutan.
+        </p>
+      </div>
+
+      <!-- 6 Initiatives Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Inisiatif 1: Smart-Farming & Irigasi Presisi -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="1">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-mint/20 border border-mint/30 text-mint flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                🌾
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                01 · Agri-GenZ
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-mint transition-colors">
+              Smart-Farming & Irigasi Presisi
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              Mengubah stigma bertani yang "kotor & capek" jadi modern dan profitable. Edukasi alsintan modern, jadwal air sawah transparan, dan teknologi fertigasi.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-mint">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+        <!-- Inisiatif 2: BUMDes Rebranding & Circular Economy -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="2">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-400/20 border border-amber-400/30 text-amber-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                🔄
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                02 · Ekonomi Syariah
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+              BUMDes Rebranding & Circular
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              BUMDes sebagai hub logistik hasil panen & inkubator usaha warga. Menghentikan jeratan tengkulak rente lewat tata kelola transparan & syariah.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-amber-300">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+        <!-- Inisiatif 3: Local Creator & Youth Preneur Lab -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="3">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-teal-400/20 border border-teal-400/30 text-teal-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                📦
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                03 · Inkubasi UMKM
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
+              Local Creator & Youth Preneur Lab
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              Fasilitasi pemuda & ibu-ibu desa menghasilkan produk bernilai tambah: packaging rapi food-grade, izin P-IRT/Halal, dan pemasaran live TikTok/Shopee.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-teal-300">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+        <!-- Inisiatif 4: Creative Hub & Event Karang Taruna -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="4">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-400/20 border border-indigo-400/30 text-indigo-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                🎪
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                04 · Karang Taruna
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+              Creative Hub & Event Taruna
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              Ruang kolaborasi nyata: Kanugrahan Fest, turnamen e-sports & olahraga rutin, mini workshop skill digital, serta aksi peduli kebersihan kali desa.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-indigo-300">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+        <!-- Inisiatif 5: Open Ledger & Kultur Transparan -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="5">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-rose-400/20 border border-rose-400/30 text-rose-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                📜
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                05 · Kejujuran & Adab
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-rose-300 transition-colors">
+              Open Ledger & Rembuk Terbuka
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              Bukan formalitas di atas kertas. Update berkala kas inisiatif yang mudah diakses warga agar tidak timbul syak wasangka dan rezeki desa kian berkah.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-rose-300">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+        <!-- Inisiatif 6: Kanugrahan-Hub (Wadah Aspirasi Interaktif) -->
+        <div class="glass-card bg-emerald-900/60 border border-emerald-700/40 p-6 rounded-3xl flex flex-col justify-between group hover:border-mint/60 transition-all cursor-pointer open-initiative-btn touch-spring" data-initiative-id="6">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-sky-400/20 border border-sky-400/30 text-sky-300 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                📱
+              </div>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-800 text-emerald-200 border border-emerald-700">
+                06 · Civic Tech
+              </span>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">
+              Kanugrahan-Hub (Aspirasi Kilat)
+            </h3>
+            <p class="text-emerald-100/80 text-xs sm:text-sm leading-relaxed mb-4">
+              Wadah interaktif cepat via web & WhatsApp bot buat lapor problem lingkungan (lampu mati, saluran air tersumbat) dan drop ide kreatif warga tanpa sekat.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs font-semibold text-sky-300">
+            <span>Pelajari Roadmap Aksi →</span>
+            <span class="text-emerald-400">Klik Detail</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. "BANGGA JADI PETANI MUDA": INTERACTIVE AGRI SIMULATOR
+       ======================================================== -->
+  <section id="simulator" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-emerald-900/10 shadow-lg bg-white relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Form Inputs & Information -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <div class="space-y-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+              <span>🌾 Kalkulator Potensi Smart-Tani</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-emerald-950">
+              Bertani dengan Akal, Menuai dengan Berkah
+            </h2>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Cek estimasi kelayakan ekonomi pertanian modern di Desa Kanugrahan. Hitung bagaimana efisiensi teknologi dan pilihan komoditas premium bisa melipatgandakan penghasilan pemuda desa!
+            </p>
+          </div>
+
+          <!-- Commodity Select -->
+          <div class="space-y-2">
+            <label for="simCropSelect" class="block text-xs font-bold uppercase tracking-wider text-stone-700">
+              Pilih Komoditas Unggulan
+            </label>
+            <div class="relative">
+              <select id="simCropSelect" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none appearance-none cursor-pointer">
+                <option value="cabai" selected>🌶️ Cabai Merah Keriting Modern (Cash Crop Nilai Tinggi)</option>
+                <option value="padi">🌾 Padi Organik Premium Kanugrahan (Kemitraan Berkelanjutan)</option>
+                <option value="melon">🍈 Melon Golden Sultan (Smart Greenhouse / Presisi)</option>
+                <option value="jagung">🌽 Jagung Pipil Hibrida (Rotasi Cepat & Pakan)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-stone-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Land Area Slider -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <label for="simAreaSlider" class="text-xs font-bold uppercase tracking-wider text-stone-700">
+                Luas Lahan Kelolaan
+              </label>
+              <span id="simAreaDisplay" class="text-sm font-extrabold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+                1.00 Ha (10.000 m²)
+              </span>
+            </div>
+            <input 
+              id="simAreaSlider" 
+              type="range" 
+              min="0.25" 
+              max="3.00" 
+              step="0.25" 
+              value="1.00" 
+              class="w-full h-2 rounded-lg cursor-pointer"
+            >
+            <div class="flex justify-between text-[11px] text-stone-400 font-medium">
+              <span>0.25 Ha (Pekarangan/Petak)</span>
+              <span>1.0 Ha</span>
+              <span>3.0 Ha (Kelompok Tani)</span>
+            </div>
+          </div>
+
+          <!-- Note -->
+          <div class="p-3.5 rounded-xl bg-amber-50/80 border border-amber-200/60 text-xs text-amber-900 flex items-start space-x-2.5">
+            <span class="text-base">💡</span>
+            <p class="leading-relaxed">
+              <strong>Kunci Keberhasilan:</strong> Pengaturan irigasi teratur, penggunaan pupuk organik hayati fermentasi lokal, dan akses pasar langsung tanpa tengkulak.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Results Card Dashboard -->
+        <div class="lg:col-span-6 bg-gradient-to-br from-emerald-950 to-emerald-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col justify-between space-y-6">
+          
+          <div class="border-b border-emerald-800/80 pb-4 flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-mint">Proyeksi Hasil per Siklus</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-white/10 text-emerald-200">Kalkulasi Transparan</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+              <p class="text-[11px] text-emerald-300 font-medium">Estimasi Total Panen</p>
+              <p id="simOutYield" class="text-2xl sm:text-3xl font-heading font-black text-white mt-1">14.5 Ton</p>
+              <span class="text-[10px] text-emerald-400">Hasil gabah/buah segar</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+              <p class="text-[11px] text-emerald-300 font-medium">Proyeksi Omset Kotor</p>
+              <p id="simOutGross" class="text-xl sm:text-2xl font-heading font-extrabold text-gold mt-1">Rp 507.500.000</p>
+              <span class="text-[10px] text-emerald-400">Harga pasar terkurasi</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-emerald-800/50 border border-mint/30 col-span-2">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-mint font-semibold uppercase tracking-wide">Potensi Laba Bersih Petani Muda</p>
+                  <p id="simOutNet" class="text-2xl sm:text-3xl font-heading font-black text-white mt-0.5">Rp 462.500.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-[11px] text-emerald-300 font-medium">Rata-rata per Bulan</p>
+                  <p id="simOutNetMonthly" class="text-base sm:text-lg font-bold text-mint font-heading mt-0.5">Rp 115.625.000 / bln</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-4 border-t border-emerald-800/80 flex items-center justify-between text-xs text-emerald-200 font-medium">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-mint"></span>
+              <span id="simOutWorkers">4 Pemuda Terberdayakan</span>
+            </span>
+            <a href="#aspirasi" class="text-mint font-bold hover:underline">Gabung Belajar Tani →</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       6. INTERACTIVE FEATURE: "KANUGRAHAN-HUB" (ASPIRASI & FEED)
+       ======================================================== -->
+  <section id="aspirasi" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <div class="mb-12 text-center max-w-3xl mx-auto space-y-3">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+        <span>📢 Ruang Aspirasi & Curhat Warga</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-emerald-950 tracking-tight">
+        Kanugrahan-Hub: Suara Warga Adalah Arah Gerak
+      </h2>
+      <p class="text-stone-600 text-base leading-relaxed">
+        Punya ide event pemuda? Resah soal debit air sawah? Atau butuh pendampingan usaha rumahan? Tuliskan di sini secara terbuka atau anonim. Mas Supi'i dan tim relawan pemuda siap menindaklanjuti.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left: Interactive Form (Frictionless & Thumb-Zone Friendly) -->
+      <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-7 border border-emerald-900/10 shadow-lg bg-white sticky top-24">
+        
+        <h3 class="text-lg font-heading font-extrabold text-emerald-950 mb-1 flex items-center gap-2">
+          <span>✍️ Drop Ide / Aspirasi Kamu</span>
+        </h3>
+        <p class="text-xs text-stone-500 mb-5">Setiap masukan bernilai emas bagi kemajuan kampung halaman.</p>
+
+        <form id="newAspirasiForm" class="space-y-4">
+          <input type="hidden" id="formSelectedTag" value="#Irigasi & Pertanian">
+
+          <!-- Category Tags Chips -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              Pilih Kategori Topik
+            </label>
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" class="form-tag-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-700 text-white ring-2 ring-emerald-400 touch-spring" data-val="#Irigasi & Pertanian">
+                #Irigasi & Pertanian
+              </button>
+              <button type="button" class="form-tag-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 touch-spring" data-val="#IdeEventPemuda">
+                #IdeEventPemuda
+              </button>
+              <button type="button" class="form-tag-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 touch-spring" data-val="#UMKM & Dagang">
+                #UMKM & Dagang
+              </button>
+              <button type="button" class="form-tag-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 touch-spring" data-val="#FasilitasUmum">
+                #FasilitasUmum
+              </button>
+            </div>
+          </div>
+
+          <!-- Textarea Input -->
+          <div>
+            <label for="formAspirasiText" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Ide / Keresahanmu di Kanugrahan <span class="text-rose-500">*</span>
+            </label>
+            <textarea 
+              id="formAspirasiText" 
+              rows="4" 
+              required 
+              placeholder="Contoh: Perlu dibikin jadwal rutin bersih-bersih selokan sawah tiap Minggu pagi bareng pemuda dusun..." 
+              class="w-full bg-stone-50 border border-stone-200 rounded-2xl p-3.5 text-sm text-stone-900 placeholder:text-stone-400 focus:ring-2 focus:ring-emerald-500 focus:bg-white focus:outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <!-- Author Input -->
+          <div>
+            <label for="formAspirasiAuthor" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Nama Pengirim / Dusun (Boleh Anonim)
+            </label>
+            <input 
+              id="formAspirasiAuthor" 
+              type="text" 
+              placeholder="Misal: Aris (Pemuda Dusun 1) atau Anonim" 
+              class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3.5 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:ring-2 focus:ring-emerald-500 focus:bg-white focus:outline-none transition-all"
+            >
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-5 rounded-full bg-emerald-850 hover:bg-emerald-900 text-white font-heading font-bold text-sm shadow-md hover:shadow-lg transition-all touch-spring flex items-center justify-center space-x-2"
+          >
+            <svg class="w-4 h-4 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            <span>Kirim Aspirasi Sekarang</span>
+          </button>
+
+          <p class="text-[11px] text-center text-stone-500">
+            🔒 Identitas dijaga aman. Aspirasi akan langsung tampil di live feed warga.
+          </p>
+        </form>
+
+      </div>
+
+      <!-- Right: Live Community Wall Feed -->
+      <div class="lg:col-span-7 space-y-5">
+        
+        <!-- Filter Tabs -->
+        <div class="flex items-center justify-between flex-wrap gap-2 pb-2">
+          <span class="text-xs font-bold text-emerald-950 uppercase tracking-wider">Feed Aspirasi Warga</span>
+          
+          <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 max-w-full">
+            <button class="filter-chip px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800 text-white shadow-sm touch-spring" data-tag="Semua">
+              Semua
+            </button>
+            <button class="filter-chip px-3 py-1 rounded-full text-xs font-semibold bg-white text-emerald-900 border border-stone-200 hover:bg-stone-50 touch-spring" data-tag="#Irigasi">
+              #Irigasi
+            </button>
+            <button class="filter-chip px-3 py-1 rounded-full text-xs font-semibold bg-white text-emerald-900 border border-stone-200 hover:bg-stone-50 touch-spring" data-tag="#IdeEvent">
+              #Event
+            </button>
+            <button class="filter-chip px-3 py-1 rounded-full text-xs font-semibold bg-white text-emerald-900 border border-stone-200 hover:bg-stone-50 touch-spring" data-tag="#UMKM">
+              #UMKM
+            </button>
+            <button class="filter-chip px-3 py-1 rounded-full text-xs font-semibold bg-white text-emerald-900 border border-stone-200 hover:bg-stone-50 touch-spring" data-tag="#Fasilitas">
+              #Fasilitas
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic List Container -->
+        <div id="aspirasiFeedList" class="grid grid-cols-1 gap-4">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       7. STATS & COMMUNITY GUYUB HIGHLIGHTS
+       ======================================================== -->
+  <section id="statsSection" class="py-16 bg-white border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+        
+        <div class="p-4">
+          <p class="counter-val text-3xl sm:text-5xl font-heading font-black text-emerald-950" data-target="100" data-suffix="%">0%</p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-1">Guyub & Gotong Royong</p>
+          <p class="text-[11px] text-stone-500">Menjaga ukhuwah warga</p>
+        </div>
+
+        <div class="p-4">
+          <p class="counter-val text-3xl sm:text-5xl font-heading font-black text-emerald-950" data-target="6" data-suffix=" Aksi">0 Aksi</p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-1">Inisiatif Nyata Berjalan</p>
+          <p class="text-[11px] text-stone-500">Agri, UMKM & Pemuda</p>
+        </div>
+
+        <div class="p-4">
+          <p class="counter-val text-3xl sm:text-5xl font-heading font-black text-emerald-950" data-target="24" data-suffix="/7">0/7</p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-1">Kanal Aspirasi Terbuka</p>
+          <p class="text-[11px] text-stone-500">Bebas lapor kapan saja</p>
+        </div>
+
+        <div class="p-4">
+          <p class="counter-val text-3xl sm:text-5xl font-heading font-black text-emerald-950" data-target="0" data-suffix=" Wacana">0 Wacana</p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-1">Zero Politik Praktis</p>
+          <p class="text-[11px] text-stone-500">Murni gerakan kemaslahatan</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8. FIELD HIGHLIGHTS & COMMUNITY GALLERY
+       ======================================================== -->
+  <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+          <span>📸 Jejak Langkah di Desa</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-emerald-950">
+          Dekat Bersama Warga, Nyata di Lapangan
+        </h2>
+      </div>
+      <p class="text-stone-600 text-sm max-w-md">
+        Setiap jabat tangan adalah amanah, setiap rembuk kopi adalah komitmen untuk terus melangkah bersama.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Photo 1: Community Gathering with Yayasan Banner -->
+      <div class="md:col-span-7 glass-card rounded-3xl overflow-hidden relative group">
+        <div class="h-72 sm:h-80 overflow-hidden bg-stone-100">
+          <img 
+            src="assets/komunitas-guyub.jpg" 
+            alt="Silaturahmi dan Rembuk Guyub Bersama Warga & Pengurus Desa" 
+            class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-5 bg-white">
+          <span class="text-xs font-bold text-emerald-700">Silaturahmi & Ukhuwah</span>
+          <h4 class="font-heading font-bold text-base text-stone-900 mt-0.5">Rembuk Guyub & Pembinaan Sosial Warga</h4>
+          <p class="text-xs text-stone-500 mt-1">Duduk sama rendah, berdiri sama tinggi dalam merajut ukhuwah dan kebersamaan masyarakat Kanugrahan.</p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Supi'i Speaking with Mic -->
+      <div class="md:col-span-5 glass-card rounded-3xl overflow-hidden relative group">
+        <div class="h-72 sm:h-80 overflow-hidden bg-stone-100">
+          <img 
+            src="assets/supii-bicara.jpg" 
+            alt="Supi'i Slamet saat Berdiskusi dan Memberikan Motivasi Pemuda" 
+            class="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-5 bg-white">
+          <span class="text-xs font-bold text-amber-700">Edukasi & Visi</span>
+          <h4 class="font-heading font-bold text-base text-stone-900 mt-0.5">Membakar Semangat Petani Muda</h4>
+          <p class="text-xs text-stone-500 mt-1">Mengajak generasi muda untuk percaya diri berkarya dan berpenghasilan bermartabat dari desa.</p>
+        </div>
+      </div>
+
+      <!-- Photo 3: Creative Studio Hub -->
+      <div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group">
+        <div class="h-64 sm:h-72 overflow-hidden bg-stone-100">
+          <img 
+            src="assets/youth-creative-hub.jpg" 
+            alt="Inkubasi Kreatif Pemuda dan Ibu-ibu Pengusaha Lokal Desa" 
+            class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-5 sm:p-6 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold text-emerald-700">Laboratorium Wirausaha Desa</span>
+            <h4 class="font-heading font-bold text-base sm:text-lg text-stone-900 mt-0.5">Studio Packaging & Digital Hub Kanugrahan</h4>
+            <p class="text-xs text-stone-500 mt-1">Ruang kreasi kemasan kopi, beras organik, dan olahan tani bersama anak muda & kelompok ibu-ibu.</p>
+          </div>
+          <a href="#aspirasi" class="inline-flex items-center space-x-2 text-xs font-bold px-4 py-2.5 rounded-full bg-emerald-100 text-emerald-900 hover:bg-emerald-200 transition-colors whitespace-nowrap">
+            <span>Daftar Usahamu →</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       9. FAQ SANTAI & SANTUN (ACCORDION)
+       ======================================================== -->
+  <section id="faq" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    
+    <div class="mb-12 text-center space-y-3">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+        <span>❓ FAQ Santai & Santun</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-emerald-950 tracking-tight">
+        Pertanyaan yang Sering Ditanyakan
+      </h2>
+      <p class="text-stone-600 text-sm leading-relaxed">
+        Keterbukaan adalah pondasi utama kepercayaan kita semua. Simak penjelasan kami berikut.
+      </p>
+    </div>
+
+    <div class="space-y-3.5">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item glass-card rounded-2xl border border-stone-200 overflow-hidden bg-white">
+        <button class="faq-trigger w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 focus:outline-none">
+          <span class="font-heading font-bold text-sm sm:text-base text-stone-900">
+            Apakah ini gerakan politik atau tim sukses tertentu?
+          </span>
+          <svg class="faq-icon w-4 h-4 text-emerald-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100">
+          <strong>Sama sekali bukan.</strong> Ini murni inisiatif sosial kerakyatan, personal branding, dan gerakan pemberdayaan pemuda serta petani yang digagas oleh Supi'i Slamet bersama warga Kanugrahan. Kami menolak segala bentuk politisasi murahan karena kemajuan desa harus berjalan terus tanpa sekat kelompok.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item glass-card rounded-2xl border border-stone-200 overflow-hidden bg-white">
+        <button class="faq-trigger w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 focus:outline-none">
+          <span class="font-heading font-bold text-sm sm:text-base text-stone-900">
+            Siapa saja yang bisa bergabung dalam gerakan ini?
+          </span>
+          <svg class="faq-icon w-4 h-4 text-emerald-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100 hidden">
+          Pintu kami terbuka lebar untuk seluruh elemen warga: pemuda Karang Taruna, bapak-bapak tani, ibu-ibu pelaku UMKM, hingga teman-teman perantau asal Kanugrahan di mana pun berada yang ingin urun ide atau investasi kebaikan di kampung halaman.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item glass-card rounded-2xl border border-stone-200 overflow-hidden bg-white">
+        <button class="faq-trigger w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 focus:outline-none">
+          <span class="font-heading font-bold text-sm sm:text-base text-stone-900">
+            Mengapa fokus utama gerakan ini pada pertanian dan pemuda?
+          </span>
+          <svg class="faq-icon w-4 h-4 text-emerald-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100 hidden">
+          Karena mayoritas urat nadi Desa Kanugrahan adalah lahan sawah yang subur. Jika pertanian mati atau tidak diminati anak muda, desa akan kehilangan masa depannya. Pemuda membawa inovasi dan teknologi, sedangkan tanah sawah menyediakan rezeki yang berkah melimpah.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item glass-card rounded-2xl border border-stone-200 overflow-hidden bg-white">
+        <button class="faq-trigger w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 focus:outline-none">
+          <span class="font-heading font-bold text-sm sm:text-base text-stone-900">
+            Bagaimana cara menyalurkan aspirasi atau ikut rembuk langsung?
+          </span>
+          <svg class="faq-icon w-4 h-4 text-emerald-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100 hidden">
+          Anda bisa langsung mengisi formulir di bagian "Ruang Aspirasi" website ini atau mengirim pesan WhatsApp ke tim kami. Kami juga mengadakan rembuk kopi santai berkala di balai tani desa yang infonya selalu dibagikan di grup komunitas.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       10. MINIMALIST AESTHETIC FOOTER & SPOTIFY QUOTE BAR
+       ======================================================== -->
+  <footer class="bg-emerald-950 text-white pt-16 pb-24 sm:pb-16 border-t border-emerald-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Spotify Playlist Vibe Quote Bar -->
+      <div class="glass-card bg-emerald-900/60 border border-emerald-800 p-4 sm:p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <div class="flex items-center space-x-3 w-full sm:w-auto">
+          <div class="w-12 h-12 rounded-xl bg-mint/20 border border-mint/30 flex items-center justify-center text-mint flex-shrink-0">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div>
+            <p class="text-xs text-mint font-semibold uppercase tracking-wider">Soundtrack Perjuangan Desa</p>
+            <p class="text-sm sm:text-base font-heading font-bold text-white">"Menanam Niat Baik, Memanen Berkah Bersama."</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
+          <button id="shareHubBtn" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-emerald-100 border border-white/20 flex items-center gap-1.5 touch-spring">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+            <span>Bagikan Website</span>
+          </button>
+          
+          <a 
+            href="https://wa.me/6281234567890?text=Halo%20Mas%20Supii,%20saya%20pemuda%20Kanugrahan%20mau%20gabung%20gerakan%20kolaborasi%20ini." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-4 py-2 rounded-full bg-mint hover:bg-sprout text-emerald-950 text-xs font-bold shadow-sm transition-all touch-spring flex items-center gap-1.5"
+          >
+            <span>Hubungi WhatsApp</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Footer Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4">
+        
+        <div class="md:col-span-6 space-y-3">
+          <div class="flex items-center space-x-2">
+            <span class="text-xl">🌱</span>
+            <span class="font-heading font-black text-lg tracking-tight text-white">Supi'i Slamet</span>
+          </div>
+          <p class="text-xs sm:text-sm text-emerald-200/80 leading-relaxed max-w-sm">
+            Inisiatif kemasyarakatan independen pemuda dan petani Desa Kanugrahan. Bergerak dengan akhlak, ilmu, dan semangat gotong royong tanpa pamrih.
+          </p>
+          <p class="text-xs text-mint font-semibold">
+            #PulangBikinImpact · #PetaniKerenKanugrahan · #KanugrahanLevelUp
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-white">Inisiatif</p>
+          <ul class="text-xs text-emerald-200/80 space-y-1.5">
+            <li><a href="#inisiatif" class="hover:text-mint">Smart-Farming & Irigasi</a></li>
+            <li><a href="#inisiatif" class="hover:text-mint">BUMDes Rebranding</a></li>
+            <li><a href="#inisiatif" class="hover:text-mint">Local Creator Incubator</a></li>
+            <li><a href="#inisiatif" class="hover:text-mint">Creative Karang Taruna</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-white">Komunitas & Kontak</p>
+          <div class="text-xs text-emerald-200/80 space-y-1.5">
+            <p>📍 Dusun Kanugrahan, Kec. Kanugrahan</p>
+            <p>💬 Grup WA Pemuda Kreatif Kanugrahan</p>
+            <p>📸 Instagram: @kanugrahan.levelup</p>
+            <p>🎵 TikTok: @pemudatani.kanugrahan</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Note -->
+      <div class="pt-8 border-t border-emerald-900 text-center text-xs text-emerald-300/60 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>© 2026 Supi'i Slamet & Komunitas Kanugrahan Level Up. Built with ❤️ for Desa Kanugrahan.</p>
+        <p class="text-[11px]">Gerakan Sosial Kerakyatan Mandiri & Non-Politik</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       11. MOBILE BOTTOM NAVIGATION BAR (Thumb Zone Optimized)
+       ======================================================== -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-nav border-t border-emerald-900/10 px-4 py-2 flex items-center justify-around shadow-2xl" aria-label="Navigasi Bawah Mobile">
+    <a href="#hero" class="flex flex-col items-center py-1 text-stone-600 hover:text-emerald-800 touch-spring">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Home</span>
+    </a>
+    <a href="#cerita" class="flex flex-col items-center py-1 text-stone-600 hover:text-emerald-800 touch-spring">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Manifesto</span>
+    </a>
+    <a href="#inisiatif" class="flex flex-col items-center py-1 text-stone-600 hover:text-emerald-800 touch-spring">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">6 Aksi</span>
+    </a>
+    <a href="#aspirasi" class="flex flex-col items-center py-1 text-emerald-800 font-bold touch-spring">
+      <div class="w-8 h-8 rounded-full bg-emerald-850 text-white flex items-center justify-center -mt-3 shadow-md">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+      </div>
+      <span class="text-[10px] font-bold mt-0.5">Curhat</span>
+    </a>
+    <a href="#simulator" class="flex flex-col items-center py-1 text-stone-600 hover:text-emerald-800 touch-spring">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Simulasi</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================
+       MODAL 1: DETAIL INISIATIF DRAWER / POPUP
+       ======================================================== -->
+  <div id="initiativeModal" class="backdrop-fade hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/60 backdrop-blur-sm">
+    <div class="glass-card bg-white max-w-lg w-full rounded-3xl p-6 sm:p-7 shadow-2xl border border-stone-200 relative max-h-[90vh] overflow-y-auto">
+      
+      <button id="closeInitModal" class="absolute top-4 right-4 p-2 rounded-full text-stone-400 hover:text-stone-700 bg-stone-100 hover:bg-stone-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-4">
+        <span id="initModalTag" class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">
+          Inisiatif Desa
+        </span>
+
+        <h3 id="initModalTitle" class="text-xl sm:text-2xl font-heading font-extrabold text-stone-900 leading-tight">
+          Detail Inisiatif
+        </h3>
+
+        <p id="initModalSummary" class="text-sm text-stone-600 leading-relaxed font-normal">
+          Ringkasan inisiatif
+        </p>
+
+        <div class="space-y-2 pt-2 border-t border-stone-100">
+          <p class="text-xs font-bold uppercase tracking-wider text-stone-700">Tahapan Konkrit Aksi:</p>
+          <ul id="initModalPoints" class="space-y-2 text-sm text-stone-700">
+            <!-- Populated via JS -->
+          </ul>
+        </div>
+
+        <blockquote id="initModalQuote" class="p-3.5 rounded-2xl bg-emerald-50 text-emerald-900 text-xs italic font-medium border-l-4 border-emerald-600">
+          Quote
+        </blockquote>
+
+        <div class="pt-2 flex items-center gap-3">
+          <a id="initModalWaBtn" href="#" target="_blank" class="w-full py-3 rounded-full bg-emerald-850 hover:bg-emerald-900 text-white font-bold text-xs text-center shadow-md touch-spring flex items-center justify-center gap-2">
+            <span>Saya Mau Ikut Kolaborasi di Inisiatif Ini</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL 2: SUCCESS SUBMIT ASPIRASI NOTIFICATION
+       ======================================================== -->
+  <div id="modalSuccessAspirasi" class="backdrop-fade hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/60 backdrop-blur-sm">
+    <div class="glass-card bg-white max-w-sm w-full rounded-3xl p-6 text-center shadow-2xl border border-stone-200 space-y-4">
+      <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mx-auto">
+        🌱
+      </div>
+      <h3 class="text-lg font-heading font-extrabold text-stone-900">Aspirasi Terkirim!</h3>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        Terima kasih banyak! Ide dan keresahanmu sudah masuk ke radar Mas Supi'i dan tim pemuda Kanugrahan. Mari terus kawal bersama!
+      </p>
+      <button id="closeModalSuccess" class="w-full py-2.5 rounded-full bg-emerald-850 hover:bg-emerald-900 text-white font-bold text-xs touch-spring">
+        Tutup & Lihat di Feed
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotice" class="fixed bottom-20 md:bottom-8 right-6 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    <div class="glass-nav rounded-2xl px-4 py-2.5 shadow-xl border border-emerald-500/30 text-xs font-semibold text-emerald-950 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-mint"></span>
+      <span class="toast-text">Berhasil!</span>
+    </div>
+  </div>
+
+  <!-- Main JS Script -->
+  <script src="app.js"></script>
+</body>
+</html>
