@@ -4,8 +4,9 @@
   "description": "Gerakan Balik Desa Bikin Karya bersama Supi'i Slamet - Personal Branding & Social Impact Web App",
   "main": "index.html",
   "scripts": {
-    "dev": "npx serve -l 8090 .",
-    "start": "npx serve -l 8090 ."
+    "build": "exit 0",
+    "dev": "npx serve -l 8092 .",
+    "start": "npx serve -l 8092 ."
   },
   "keywords": [
     "kanugrahan",

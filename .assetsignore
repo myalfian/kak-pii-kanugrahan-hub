@@ -1,0 +1,7 @@
+node_modules
+.git
+.github
+.wrangler
+*.log
+Thumbs.db
+.DS_Store
