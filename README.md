@@ -1,4 +1,4 @@
-# Supi'i Slamet 🌿 | Kanugrahan Hub
+# Cak Supi'i 🌿 | Kanugrahan Hub
 > **"Balik Desa, Bikin Karya: Saatnya Kanugrahan Level Up!"**  
 > *#PulangBikinImpact · #PetaniKerenKanugrahan · #KanugrahanLevelUp*
 
@@ -6,7 +6,7 @@
 
 ## 🌾 Konsep & Filosofi Gerakan
 
-Platform web personal branding & social impact berbasis *mobile-first* untuk figur **Supi'i Slamet (Kak Pi'i)** di **Desa Kanugrahan**. Dirancang dengan estetika ultra-modern perpaduan antara **Linear**, **Vercel**, dan *modern luxury community landing pages*, namun dibalut dengan kehangatan agrikultur pedesaan dan adab islami yang sejuk (*sopan, adem, berdampak*).
+Platform web personal branding & social impact berbasis *mobile-first* untuk figur **Cak Supi'i** di **Desa Kanugrahan**. Dirancang dengan estetika ultra-modern perpaduan antara **Linear**, **Vercel**, dan *modern luxury community landing pages*, namun dibalut dengan kehangatan agrikultur pedesaan dan adab islami yang sejuk (*sopan, adem, berdampak*).
 
 ### ⚖️ Kepatuhan & Mandat Utama (Strict Mandate)
 - **100% Bebas Jargon Politik:** Tanpa nomor urut, tanpa istilah coblos/pemilu, tanpa kata kampanye.

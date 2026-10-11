@@ -1,7 +1,7 @@
 {
   "name": "kak-pii-kanugrahan-hub",
   "version": "1.0.0",
-  "description": "Gerakan Balik Desa Bikin Karya bersama Supi'i Slamet - Personal Branding & Social Impact Web App",
+  "description": "Gerakan Balik Desa Bikin Karya bersama Cak Supi'i - Personal Branding & Social Impact Web App",
   "main": "index.html",
   "scripts": {
     "build": "exit 0",

@@ -1,5 +1,5 @@
 /**
- * Supi'i Slamet - Kanugrahan Hub
+ * Cak Supi'i - Kanugrahan Hub
  * Balik Desa, Bikin Karya: Saatnya Kanugrahan Level Up!
  * Modern Gen-Z Community Movement & Agri-Tech Platform
  */
@@ -539,7 +539,7 @@ function initInitiativeModals() {
       });
 
       if (joinWaBtn) {
-        const msg = encodeURIComponent(`Halo Mas Supi'i & Tim Kanugrahan Level Up, saya tertarik ikut kolaborasi di inisiatif: ${data.title}`);
+        const msg = encodeURIComponent(`Halo Cak Supi'i & Tim Kanugrahan Level Up, saya tertarik ikut kolaborasi di inisiatif: ${data.title}`);
         joinWaBtn.href = `https://wa.me/6281234567890?text=${msg}`;
       }
 
@@ -693,7 +693,7 @@ function initCopyShare() {
 
   shareBtn.addEventListener('click', async () => {
     const shareData = {
-      title: "Supi'i Slamet | Kanugrahan Level Up",
+      title: "Cak Supi'i | Kanugrahan Level Up",
       text: "Balik Desa, Bikin Karya: Saatnya Kanugrahan Level Up! Gerakan Pemuda & Smart-Agri Desa Kanugrahan.",
       url: window.location.href
     };
